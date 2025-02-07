@@ -19,5 +19,40 @@ function totalAll(subTotal, shipping = 0, discount = 0) {
 
 totalElem.innerHTML = totalAll(subTotalElem.innerHTML, shippingElem.innerHTML, discountElem.innerHTML);
 
+let tambah = (num) => {
+    let number = parseFloat(quantityElem.value);
+    number += num;
+    quantityElem.value = number;
+
+    let hasil = number * priceElem.innerHTML;
+    subTotalElem.innerHTML = hasil;
+
+    let total = totalAll(subTotalElem.innerHTML, shippingElem.innerHTML, discountElem.innerHTML);
+    totalElem.innerHTML = total;
+}
+
+let kurang = (num) => {
+    let number = parseFloat(quantityElem.value);
+    number -= num;
+    quantityElem.value = number;
+
+    let hasil = number * priceElem.innerHTML;
+    subTotalElem.innerHTML = hasil;
+
+    let total = totalAll(subTotalElem.innerHTML, shippingElem.innerHTML, discountElem.innerHTML);
+    totalElem.innerHTML = total;
+}
+
+function buttonVoucher() {
+    let inputVoucher = codeVoucherElem.value;
+    if (inputVoucher === "abu-dzar") {
+        discountElem.innerHTML = 10000;
+        } else if (inputVoucher === "badhoon") {
+            discountElem.innerHTML = 5000;
+            } else {
+                discountElem.innerHTML = 0;
+    }
+}
+
 
 
