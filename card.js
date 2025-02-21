@@ -46,10 +46,22 @@ let kurang = (num) => {
 function buttonVoucher() {
     let inputVoucher = codeVoucherElem.value;
     if (inputVoucher === "abu-dzar") {
+        textVoucherElem.innerHTML = "Diskon 10000 Berhasil";
+        textVoucherElem.classList.remove("applied");
+        textVoucherElem.classList.remove("reject");
+        textVoucherElem.classList.add("success");
         discountElem.innerHTML = 10000;
-        } else if (inputVoucher === "badhoon") {
+        } else if (inputVoucher === "badhoon123_") {
+            textVoucherElem.innerHTML = "Diskon 5000 Berhasil";
+            textVoucherElem.classList.remove("applied");
+            textVoucherElem.classList.remove("reject");
+            textVoucherElem.classList.add("success");
             discountElem.innerHTML = 5000;
             } else {
+                textVoucherElem.innerHTML = "Kode Voucher Tidak Valid";
+                textVoucherElem.classList.remove("applied");
+                textVoucherElem.classList.remove("success");
+                textVoucherElem.classList.add("reject");
                 discountElem.innerHTML = 0;
     }
 }
