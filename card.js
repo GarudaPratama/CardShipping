@@ -1,3 +1,4 @@
+
 let priceElem = document.getElementById('price');
 let subTotalElem = document.getElementById('subtotal');
 let shippingElem = document.getElementById('shipping');
@@ -57,14 +58,19 @@ function buttonVoucher() {
             textVoucherElem.classList.remove("reject");
             textVoucherElem.classList.add("success");
             discountElem.innerHTML = 5000;
-            } else {
-                textVoucherElem.innerHTML = "Kode Voucher Tidak Valid";
+            } else if (inputVoucher === "sandy123_") {
+                textVoucherElem.innerHTML = "Diskon 15000 Berhasil";
                 textVoucherElem.classList.remove("applied");
-                textVoucherElem.classList.remove("success");
-                textVoucherElem.classList.add("reject");
-                discountElem.innerHTML = 0;
+                textVoucherElem.classList.remove("reject");
+                textVoucherElem.classList.add("success");
+                discountElem.innerHTML = 15000;
+                } else {
+                    textVoucherElem.innerHTML = "Kode Voucher Tidak Valid";
+                    textVoucherElem.classList.remove("applied");
+                    textVoucherElem.classList.remove("success");
+                    textVoucherElem.classList.add("reject");
+                    discountElem.innerHTML = 0;
     }
 }
-
 
 
